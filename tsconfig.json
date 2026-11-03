@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
+    // กำหนด target และชนิด library ที่ TypeScript ใช้ตรวจโค้ดใน browser/Node
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    // เปิดการรองรับ JavaScript และข้ามการตรวจ declaration ของ dependency
     "allowJs": true,
     "skipLibCheck": true,
+    // เปิด strict type checking และไม่สร้างไฟล์ JavaScript จากการตรวจนี้
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    // ตั้งค่าระบบ module ให้เหมาะกับ Next.js และ package ที่ติดตั้ง
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
+    // ให้ Next.js plugin ช่วยตรวจ type และ alias @/ ชี้ไปยัง src/
     "incremental": true,
     "plugins": [
       {
@@ -22,6 +27,7 @@
       "@/*": ["./src/*"]
     }
   },
+  // ระบุไฟล์ source และ type ที่ต้องตรวจ; ไม่รวม dependencies
   "include": [
     "next-env.d.ts",
     "**/*.ts",
